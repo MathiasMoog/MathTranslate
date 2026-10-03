@@ -29,7 +29,9 @@ setuptools.setup(
                       "requests",
                       "regex",
                       "tqdm",
-                      "appdata"
+                      "appdata",
+                      "langchain",
+                      "langchain-ollama",
                       ],
     classifiers=[
         "Programming Language :: Python :: 3",
