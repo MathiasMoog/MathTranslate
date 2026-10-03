@@ -32,9 +32,13 @@ class TextTranslator:
             #self.translator = ParallelTranslator(language_to, language_from)
             #self.try_translate = lambda text: self.translator.translate(text)
         elif engine == 'tencent':
-            from mathtranslate.tencent import Translator
-            self.translator = Translator()
-            self.try_translate = lambda text: self.translator.translate(text, self.language_to, self.language_from)
+                    from mathtranslate.tencent import Translator
+                    self.translator = Translator()
+                    self.try_translate = lambda text: self.translator.translate(text, self.language_to, self.language_from)
+        elif engine == 'ollama':
+                    from mathtranslate.ollama import Translator
+                    self.translator = Translator()
+                    self.try_translate = lambda text: self.translator.translate(text, self.language_to, self.language_from)
         else:
             assert False, "engine must be google or tencent"
         self.language_to = language_to
